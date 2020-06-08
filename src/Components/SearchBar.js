@@ -25,10 +25,9 @@ class SearchBar extends React.Component {
 }
 
 const fetchData = (t) => async dispatch => {
-    await fetch(`http://www.omdbapi.com/?t=${t}&plot=full&apikey=b8bc058d`)
+    await fetch(`https://www.omdbapi.com/?t=${t}&plot=full&apikey=b8bc058d`)
                     .then(res => res.json())
                     .then(res => {
-                        console.log(res)
                         if(res.Error) {
                             return dispatch({
                                 type: NOT_FOUND
